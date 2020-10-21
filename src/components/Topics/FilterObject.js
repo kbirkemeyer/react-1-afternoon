@@ -4,9 +4,9 @@ export default class FilterObject extends Component {
     constructor() {
         super();
         this.state = {
-            unFilteredArray: [{name: "Beans", color: "the most brown", age: 14}, {name: "ChickyP", color: "chocolate dapple", middleName: "Mischief"}, {name: "Sophie", color: "oreo", age: 12, primaryState: "tiny"}, {name: "Binky", color: "black", age: 9}],
+            dogArray: [{name: "Beans", color: "the most brown", age: 14}, {name: "ChickyP", color: "chocolate dapple", middleName: "Mischief"}, {name: "Sophie", color: "oreo", age: 12, primaryState: "tiny"}, {name: "Binky", color: "black", age: 9}],
             userInput: '',
-            filteredArray: []
+            filteredDog: []
         }
     }
 
@@ -15,7 +15,7 @@ export default class FilterObject extends Component {
     }
 
     filterItems(prop) {
-        let pets = this.state.unFilteredArray;
+        let pets = this.state.dogArray;
         let filteredPets = [];
 
         for(let i= 0; i < pets.length; i++){
@@ -23,17 +23,17 @@ export default class FilterObject extends Component {
                 filteredPets.push(pets[i]);
             }
         }
-        this.setState({filteredPets: filteredPets});
+        this.setState({filteredDog: filteredPets});
     }
     
     render() {
         return(
             <div className="puzzleBox filterObjectPB">
                 <h4>Filter Object</h4>
-                <span className="puzzleText"> Original: {JSON.stringify(this.state.unFilteredArray, null, 10)}</span>
+                <span className="puzzleText"> Original: {JSON.stringify(this.state.dogArray, null, 10)}</span>
                 <input className="inputLine" onChange={e => this.handleChange(e.target.value)}></input>
                 <button className="confirmationButton" onClick={() => this.filterItems(this.state.userInput)}>Filter</button>
-                <span className="filterObjectRB">Filtered: {JSON.stringify(this.state.filteredArray, null, 10)}</span>
+                <span className="filterObjectRB">Filtered: {JSON.stringify(this.state.filteredDog, null, 10)}</span>
             </div>
         )
     }
