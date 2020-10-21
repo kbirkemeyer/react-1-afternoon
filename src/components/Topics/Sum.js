@@ -17,6 +17,10 @@ export default class Sum extends Component {
     updateNumber2(value) {
         this.setState({number2: parseInt(val, 10)})
     }
+
+    add (num1, num2) {
+        return num1 + num2
+    }
     
     render() {
         return(
