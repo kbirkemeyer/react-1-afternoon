@@ -4,22 +4,22 @@ export default class Sum extends Component {
     constructor() {
         super();
         this.state = {
-            number1 = 0,
-            number2 = 0,
-            sum = null
+            number1: 0,
+            number2: 0,
+            sum: null
         }
     }
 
     updateNumber1(value) {
-        this.setState({number1: parseInt(val, 10)})
+        this.setState({number1: parseInt(value, 10)})
     }
 
     updateNumber2(value) {
-        this.setState({number2: parseInt(val, 10)})
+        this.setState({number2: parseInt(value, 10)})
     }
 
     add (num1, num2) {
-        return num1 + num2
+        this.setState({sum: num1 + num2})
     }
     
     render() {
