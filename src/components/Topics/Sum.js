@@ -34,3 +34,5 @@ export default class Sum extends Component {
         )
     }
 }
+
+//ready for review
