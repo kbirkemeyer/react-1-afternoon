@@ -9,20 +9,31 @@ export default class Palindrome extends Component {
         };
     }
     
-handleChange(val) {
-    this.setState({userInput: val});
-}
+    handleChange(val) {
+        this.setState({userInput: val});
+    }
 
-palindromer(userInput) {
+    palindromer(userInput) {
+        let forwards = userInput;
+        let backwards = userInput;
+        backwards = backwards.split('');
+        backwards = backwards.reverse();
+        backwards = backwards.join('');
 
-}
+        if (forwards === backwards) {
+            this.setState({palindrome: 'true'});
+        } else {
+            this.setState({palindrome: 'false'});
+        }
+    }
+
 
     render() {
         return(
             <div className="puzzleBox palindromePB">
                 <h4>Palindrome</h4>
                 <input className="inputLine" onChange={(e) => this.handleChange(e.target.value)}/>
-                <button className="confirmationButton" onClick={() => this.palindromer(this.state.userInput)}></button>
+                <button className="confirmationButton" onClick={() => this.palindromer(this.state.userInput)}>Check</button>
                 <span className="resultsBox"> Palindrome: {this.state.palindrome}</span>
             </div>
         )
