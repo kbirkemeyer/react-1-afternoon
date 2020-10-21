@@ -39,3 +39,5 @@ export default class Palindrome extends Component {
         )
     }
 }
+
+//ready for review
